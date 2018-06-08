@@ -12,7 +12,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b) { 
+function sum(a, b) {
   var result = a + b;
   var array = [result];
   console.log(array);
@@ -61,26 +61,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  function sum(a, b, c) { 
-    var result = a + b + c;
-    var array = [result];
-    console.log(array);
 
-    array[1] = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
+  var abSum = sum(a, b)[0];
+  var resultSum = sum(abSum, c)[0];
+  var array = [resultSum];
+  array.push(resultSum);
 
-    return array;
-  }
-  function multiply(a, b, c) {
-    var result = a * b * c;
-    var array = [result];
-    console.log(array);
-  
-    array[1] = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
-    return array;
-  }
-  
-    
+  var resultProd = a * b;
+  var abProd = multiply(a, b)[0];
+  var resultProd = multiply(abProd, c)[0];
+  var array = [resultProd];
+  array.push(resultProd);
 
+  console.log(array);
+
+  array[2] = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + resultProd + '.';
+  array[3] = 'The sum of ' + a + ' and ' + b + ' and ' + c +' is ' + resultSum + '.';
+
+  return array;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
