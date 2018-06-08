@@ -61,6 +61,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
+  function sum(a, b, c) { 
+    var result = a + b + c;
+    var array = [result];
+    console.log(array);
+
+    array[1] = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
+
+    return array;
+  }
+  function multiply(a, b, c) {
+    var result = a * b * c;
+    var array = [result];
+    console.log(array);
+  
+    array[1] = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
+    return array;
+  }
+  
+    
 
 }
 
