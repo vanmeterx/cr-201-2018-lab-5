@@ -36,11 +36,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
+  var result = a * b;
+  var array = [result];
+  console.log(array);
 
+  array[1] = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
+  return array;
 }
 
-// Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -58,6 +62,23 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
 
+  var abSum = sum(a, b)[0];
+  var resultSum = sum(abSum, c)[0];
+  var array = [resultSum];
+  array.push(resultSum);
+
+  var resultProd = a * b;
+  var abProd = multiply(a, b)[0];
+  var resultProd = multiply(abProd, c)[0];
+  var array = [resultProd];
+  array.push(resultProd);
+
+  console.log(array);
+
+  array[2] = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + resultProd + '.';
+  array[3] = 'The sum of ' + a + ' and ' + b + ' and ' + c +' is ' + resultSum + '.';
+
+  return array;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
